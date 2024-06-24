@@ -1,0 +1,613 @@
+/* Add Vairable */
+:root {
+    --main-color: white;
+    --secondary-color: #2c4755;
+    --padding: 60px;
+    --background-color: #101010;
+}
+
+/* End Vairable */
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Of Global Rules */
+.special-heading {
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+.special-heading+p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+
+@media (max-width: 767px) {
+    .special-heading {
+        font-size: 60px;
+    }
+
+    .special-heading+p {
+        margin-top: -20px;
+    }
+}
+
+
+
+.grid-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* End Components */
+
+
+
+/* Start Header */
+.header {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+}
+
+
+
+.header i {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+
+}
+
+.header .logo {
+    width: 60px;
+}
+
+.header .links {
+    position: relative;
+    transition: 0.5s;
+
+}
+
+.header .links .icon {
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    transform: rotateY(180deg);
+    /* OR We Can Use (justify-content: flex-end;) To Rotate The Icons*/
+    /* justify-content: flex-end; */
+}
+
+
+.header .links .icon span {
+    background-color: white;
+    margin-bottom: 5px;
+    height: 2px;
+}
+
+.header .links .icon span:first-child {
+    width: 100%;
+}
+
+.header .links .icon span:nth-child(2) {
+    width: 60%;
+    transition: 0.3s;
+
+}
+
+
+.header .links:hover span:nth-child(2) {
+    width: 100%;
+}
+
+.header .links .icon span:last-child {
+    width: 100%;
+}
+
+.header .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    background-color: var(--background-color);
+    display: none;
+}
+
+.header .links:hover ul {
+    display: block;
+}
+
+.header .links ul::before {
+    content: "";
+    border: 10px solid transparent;
+    border-bottom-color: #f6f6f6;
+    position: absolute;
+    top: -20px;
+    right: 5px;
+}
+
+
+.header .links ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    transition: 0.3s;
+    color: white;
+}
+
+.header .links ul li a:hover {
+    padding-left: 25px;
+}
+
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+
+/* End Header */
+
+
+/* Start Landing */
+.landing {
+    background-image: url('/Images/web-dev.jpg');
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 64px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.landing .intro-text {
+    text-align: center;
+    width: 500px;
+    height: 300px;
+    background-color: rgba(34, 33, 33, 0.561);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing .intro-text h1 {
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--main-color);
+}
+
+.landing .intro-text p {
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+    line-height: 2;
+    margin: 10px auto 0;
+    color: white;
+}
+
+/* End Landing */
+
+
+/* Start Features */
+.features {
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    background-color: var(--background-color);
+}
+
+.features .container .feat {
+    text-align: center;
+    padding: 20px;
+}
+
+.features .container .feat i {
+    color: var(--main-color);
+}
+
+.features .container .feat h3 {
+    font-weight: 800;
+    margin: 30px 0;
+    color: white;
+
+}
+
+.features .container .feat p {
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+
+/* End Features */
+
+
+/* Start Services */
+.services {
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+}
+
+.services .services-content {
+    margin-top: 100px;
+}
+
+.services .services-content .srv {
+    margin-bottom: 30px;
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .services .services-content .srv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.services .services-content .srv i {
+    color: var(--background-color);
+    flex-basis: 60px;
+}
+
+.services .services-content .srv .text {
+    flex: 1;
+}
+
+.services .services-content .srv .text h3 {
+    margin: 0;
+}
+
+.services .services-content .srv .text p {
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.services .services-content .image {
+    text-align: center;
+    position: relative;
+}
+
+.services .services-content .image::before {
+    content: "";
+    background-color: var(--background-color);
+    width: 100px;
+    height: calc(100% + 100px);
+    position: absolute;
+    top: -50px;
+    right: 0;
+    z-index: -1;
+}
+
+.services .services-content .image img {
+    width: 260px;
+}
+
+@media (max-width: 991px) {
+    .image {
+        display: none;
+    }
+}
+
+/* End Services */
+
+
+/* Start Portfolio  */
+.Portfolio {
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    background-color: var(--background-color);
+}
+
+.Portfolio .special-heading {
+    color: #ebeced22;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+.Portfolio .special-heading+p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #e3e3e3;
+}
+
+@media (max-width: 767px) {
+    .Portfolio .special-heading {
+        font-size: 60px;
+    }
+
+    .Portfolio .special-heading+p {
+        margin-top: -20px;
+    }
+}
+
+.Portfolio .Portfolio-content {
+    margin-top: 80px;
+    gap: 30px;
+}
+
+.Portfolio .Portfolio-content .card {
+    background-color: white;
+
+}
+
+.Portfolio .Portfolio-content .card img {
+    max-width: 100%;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.Portfolio .Portfolio-content .card img:hover {
+    filter: grayscale(0);
+}
+
+.Portfolio .Portfolio-content .card .info {
+    padding: 30px;
+    display: flex;
+    gap: 9px;
+    flex-direction: column;
+}
+
+.Portfolio .Portfolio-content .card .info h3 {
+    margin: 0;
+}
+
+.Portfolio .Portfolio-content .card .info p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* End Portfolio  */
+
+
+/* Start About */
+.about {
+    padding-top: var(--padding);
+    padding-bottom: var(--padding + 60px);
+}
+
+.about .about-content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width : 991px) {
+    .about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.about .about-content .imageTwo {
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+
+@media (max-width : 991px) {
+    .about .about-content .imageTwo {
+        margin: 0 auto 80px;
+    }
+}
+
+.about .about-content .imageTwo img {
+    max-width: 100%;
+}
+
+.about .about-content .imageTwo::before {
+    content: "";
+    width: 80px;
+    height: 300px;
+    height: calc(100% + 80px);
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    background-color: #ebeced;
+    z-index: -1;
+}
+
+.about .about-content .imageTwo::after {
+    top: -40px;
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--background-color);
+    border-bottom: 80px solid var(--background-color);
+    z-index: -1;
+    right: -150px;
+}
+
+@media (max-width : 991px) {
+
+    .about .about-content .imageTwo::after,
+    .about .about-content .imageTwo::before {
+        display: none;
+    }
+}
+
+.about .container .text {
+    flex-basis: calc(100% - 500px);
+}
+
+.about .container .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+}
+
+.about .container .text hr {
+    display: inline-block;
+    width: 50%;
+    border-color: black;
+    margin-bottom: 30px;
+}
+
+.about .container .text p:last-of-type {
+    line-height: 2;
+    color: #777;
+}
+
+/* End About */
+
+
+/* Start Contact */
+.contact {
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    background-color: var(--background-color);
+    border-bottom: 2px solid white;
+
+}
+
+.contact .special-heading {
+    color: #ebeced22;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+.contact .special-heading+p {
+    margin: -30px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #e3e3e3;
+}
+
+@media (max-width: 767px) {
+    .contact .special-heading {
+        font-size: 60px;
+    }
+
+    .contact .special-heading+p {
+        margin-top: -20px;
+    }
+}
+
+.contact .info {
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
+    text-align: center;
+}
+
+.contact .info .label {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--main-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.contact .info .link {
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+    color: #20b732c1;
+    text-decoration: none;
+    max-width: 100%;
+}
+
+@media (max-width : 767px) {
+
+    .contact .info .link,
+    .contact .info .label {
+        font-size: 20px;
+    }
+}
+
+
+.contact .info .social {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    gap: 8px;
+    margin-top: 20px;
+    color: white;
+}
+
+.contact .info .social i {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+/* End Contact */
+
+
+/* Start Footer */
+.footer {
+    background-color: var(--background-color);
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+/* End Footer */
